@@ -6,9 +6,12 @@ class DestinationItem extends Component {
       return (
         <div className="card">
             <img src={image} alt="mountatin" />
-            <p>type</p>
-            <p>distance</p>
-            <b>description</b>
+            <p className="description">Stylist apartment in center of the city</p>
+            <div className="card-text">
+              <p >Easy</p>
+              <p className="pl-2">6km</p>
+            </div>
+            
       </div>
       );
     }
