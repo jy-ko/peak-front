@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import DestinationItem from './DestinationItem';
 import destinations from '../destinations.json';
-import { UserContext } from '../App'
+import { UserContext } from '../UserContext'
 
 function DestinationList() {
   const [state, setState] = useState(destinations)
@@ -12,7 +12,6 @@ function DestinationList() {
 
   useEffect(() => {
     let filtered = destinations.filter(destination => destination.city === location);
-    // console.log(filtered)
     setState(filtered.length === 0 ? destinations : filtered)
 }, [location])
 

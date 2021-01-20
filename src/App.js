@@ -3,8 +3,7 @@ import './App.scss';
 import DestinationList from './components/DestinationList';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
-export let UserContext =''
+import { UserContext }  from './UserContext'
 
 function App() {
   const [location, setLocation] = useState("");
@@ -15,23 +14,22 @@ function App() {
     'Oulu,Finland',
     'Vaasa,Finland'
   ]
-  UserContext = React.createContext({location,list,updateLocation})
+  // UserContext = React.createContext({location,list,updateLocation})
 
     return ( 
       <div className="App">
         <UserContext.Provider value={{location,list,updateLocation}}>
-        <Header />
-        <DestinationList />
-        <Footer />
+          <Header />
+          <DestinationList />
+          <Footer />
         </UserContext.Provider>
     </div>
     );
 
     function updateLocation(e){
       let value = e;
-      value =value.split(',')
+      value = value.split(',')
       setLocation(value[0])
     }
 };
-
 export default App;

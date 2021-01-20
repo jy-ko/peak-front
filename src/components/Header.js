@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Modal from './Modal/Modal'
 import SearchIcon from '@material-ui/icons/Search';
-import {UserContext} from '../App'
+import { UserContext } from '../UserContext'
 
 function Header() {
     const [modal, setModal] = useState(false)
